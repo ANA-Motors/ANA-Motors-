@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="ANA MOTORS – Products and accessories with Sri Lanka-wide delivery.">
+<title>ANA MOTORS | Motors Parts & Accessories</title>
+<style>
+:root{--ink:#17202a;--muted:#64748b;--accent:#e6a700;--dark:#101820;--paper:#f5f7fa}
+*{box-sizing:border-box} body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--paper);line-height:1.5}
+header{background:var(--dark);color:#fff;padding:18px max(5vw,20px);display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.brand{font-size:1.45rem;font-weight:800;letter-spacing:.4px} .brand span{color:var(--accent)}
+nav a{color:#fff;text-decoration:none;margin-left:18px;font-weight:600}
+.hero{padding:68px 6vw;background:linear-gradient(120deg,#18232e,#35495d);color:#fff}
+.hero h1{font-size:clamp(2rem,5vw,3.5rem);line-height:1.08;margin:0 0 14px;max-width:720px}
+.hero p{font-size:1.1rem;max-width:650px;color:#e2e8f0}
+.cta{display:inline-block;background:var(--accent);color:#171717;text-decoration:none;padding:12px 18px;border-radius:7px;font-weight:800;margin-top:10px}
+.wrap{max-width:1200px;margin:auto;padding:42px 22px} .section-head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap}
+h2{margin:0 0 8px;font-size:2rem} .sub{color:var(--muted);margin:0 0 24px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.product{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 5px 18px #17202a12;display:flex;flex-direction:column}
+.product img{width:100%;height:220px;object-fit:contain;background:#fff;padding:12px}
+.product-body{padding:16px;display:flex;flex-direction:column;flex:1}
+.product h3{margin:0 0 8px;font-size:1.08rem} .product p{margin:0 0 12px;color:var(--muted);font-size:.94rem}
+.price{font-weight:800;color:var(--ink)!important;margin-top:auto!important}
+.order{display:block;text-align:center;background:#16834a;color:#fff;padding:10px;border-radius:7px;text-decoration:none;font-weight:700}
+.placeholder-art{height:220px;background:#e9edf2;color:#8b98a8;display:grid;place-items:center;text-align:center;font-weight:900;font-size:1.5rem;letter-spacing:3px}
+.placeholder{border:2px dashed #cbd5e1;box-shadow:none}
+.info{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:24px}
+.info div{background:#fff;padding:20px;border-radius:10px}
+footer{background:var(--dark);color:#dbe4ee;padding:28px 6vw;text-align:center}
+footer a{color:#ffd45a}
+@media(max-width:560px){nav a{margin:0 12px 0 0}.hero{padding:48px 22px}}
+
+/* Advanced storefront upgrades */
+:root{--accent:#f2b705}
+header{position:sticky;top:0;z-index:20;box-shadow:0 4px 18px #0002}
+.product{transition:transform .18s,box-shadow .18s;border:1px solid #e7ebef}
+.product:hover{transform:translateY(-4px);box-shadow:0 12px 28px #17202a20}
+.shop-tools{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+.shop-tools input,.shop-tools select{padding:12px 14px;border:1px solid #d5dde5;border-radius:9px;font:inherit;background:white}
+.shop-tools input{flex:1;min-width:190px}
+.product .add-cart{width:100%;border:0;border-radius:7px;padding:10px;background:#172635;color:white;font-weight:800;margin-top:9px;cursor:pointer}
+.product .add-cart:hover{background:#16834a}
+.cart-panel{position:sticky;bottom:12px;z-index:15;background:#111c27;color:white;padding:14px 18px;border-radius:12px;max-width:1150px;margin:22px auto;display:flex;align-items:center;justify-content:space-between;gap:12px;box-shadow:0 8px 25px #0003}
+.cart-panel small{color:#d5dfe8}
+.cart-panel button{background:#f2b705;color:#111;border:0;padding:11px 15px;border-radius:8px;font-weight:900;cursor:pointer}
+@media(max-width:560px){.cart-panel{margin:15px 12px;flex-wrap:wrap}.shop-tools input{min-width:100%}}
+
+
+/* ANA MOTORS Pro storefront */
+:root{scroll-behavior:smooth}
+nav{display:flex;gap:16px;flex-wrap:wrap}
+nav a{margin:0}
+.hero{position:relative;overflow:hidden}
+.hero:after{content:"ANA";position:absolute;right:5%;bottom:-45px;font-size:clamp(7rem,22vw,17rem);font-weight:900;color:#ffffff0b;pointer-events:none}
+.trust-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;padding:18px 6vw;background:#fff;border-bottom:1px solid #e7ebef}
+.trust-strip div{font-weight:700;color:#263544;text-align:center}
+.shop-tools select{min-width:165px}
+.product[hidden]{display:none!important}
+.product .quantity-tools{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:8px}
+.quantity-tools button{border:1px solid #d8e0e8;background:#f4f6f8;border-radius:7px;padding:7px 12px;font-weight:800;cursor:pointer}
+.quantity-tools span{font-weight:800}
+.checkout-fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px;margin-top:12px;width:100%}
+.checkout-fields input,.checkout-fields select,.checkout-fields textarea{width:100%;padding:11px;border:1px solid #cbd5df;border-radius:8px;font:inherit;background:#fff;color:#17202a}
+.checkout-fields textarea{min-height:74px;resize:vertical;grid-column:1/-1}
+.cart-panel{display:block}
+.cart-top{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.cart-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.cart-actions button{cursor:pointer}
+.cart-actions .clear-cart{background:#e7edf2;color:#182431}
+#anaCartLines{font-size:.9rem;color:#e0e8ef;margin-top:8px}
+.faq{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+.faq details{background:#fff;border:1px solid #e5eaf0;border-radius:10px;padding:15px}
+.faq summary{font-weight:800;cursor:pointer}
+.site-note{font-size:.88rem;color:#64748b}
+footer{margin-top:30px}
+@media(max-width:560px){header{align-items:flex-start}nav{gap:10px}nav a{font-size:.9rem}.trust-strip{padding:14px 18px}.cart-panel{position:relative;bottom:auto}.checkout-fields{grid-template-columns:1fr}}
+
+
+.pro-toolbar{display:flex;justify-content:flex-end;align-items:center;gap:12px;padding:12px 6vw;background:#111c27;color:white}
+.pro-toolbar button,.ana-admin button,.track-row button{border:0;border-radius:8px;padding:10px 14px;font-weight:800;cursor:pointer;background:#f2b705;color:#15202b}
+.wishlist-btn{border:1px solid #d6dee7;background:white;border-radius:8px;padding:8px 11px;cursor:pointer;margin-top:8px}
+.wishlist-btn.active{background:#ffe8e8;color:#b42318}
+.ana-admin{position:fixed;inset:0;z-index:1000;background:#f3f6f9;overflow:auto;padding:18px;display:none;color:#182635}
+.ana-admin.open{display:block}
+#anaAdminLogin{position:fixed;inset:0;z-index:1100;background:#101820dd;display:none;place-items:center;padding:20px}
+#anaAdminLogin.open{display:grid}
+.ana-login-card{width:min(100%,390px);background:#fff;border-radius:16px;padding:24px;box-shadow:0 18px 55px #0005}
+.ana-login-card h2{margin:0 0 8px}.ana-login-card p{color:#64748b;margin:0 0 16px}
+.ana-login-card input{width:100%;padding:13px;border:1px solid #cbd5df;border-radius:8px;font:inherit;margin-bottom:12px}
+.ana-login-actions{display:flex;gap:9px}.ana-login-actions button{flex:1;padding:11px;border:0;border-radius:8px;font-weight:800;cursor:pointer;background:#f2b705}.ana-login-actions .cancel{background:#e7edf2}
+#anaLoginError{color:#b42318;min-height:22px;font-size:.9rem}
+.ana-admin-inner{max-width:1150px;margin:auto}
+.ana-admin-head{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.ana-admin .close{background:#263747;color:white}
+.admin-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin:16px 0}
+.admin-card{background:white;border:1px solid #dce3ea;border-radius:12px;padding:14px}
+.admin-card strong{font-size:1.5rem;display:block;margin-top:6px}
+.admin-table{width:100%;border-collapse:collapse;background:white;font-size:.9rem}
+.admin-table th,.admin-table td{padding:9px;border-bottom:1px solid #e6ebf0;text-align:left}
+.admin-table input,.admin-table select,.admin-form input,.admin-form select,.track-row input,.coupon-row input{padding:9px;border:1px solid #cbd5df;border-radius:7px;max-width:100%;width:100%;box-sizing:border-box}
+.admin-form{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:9px;margin:12px 0}
+.admin-section{background:white;border:1px solid #dce3ea;border-radius:12px;padding:14px;margin:14px 0;overflow:auto}
+.admin-section h3{margin-top:0}
+.admin-actions{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}
+.admin-actions button{background:#172635;color:white}
+.admin-actions .danger{background:#a83232}
+.review-box{background:#fff;border:1px solid #e5eaf0;border-radius:10px;padding:12px;margin:10px 0}
+.review-box textarea{width:100%;min-height:65px;padding:9px;box-sizing:border-box;border:1px solid #ccd5de;border-radius:8px}
+.coupon-row,.track-row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:10px 0}
+.coupon-row input,.track-row input{max-width:280px}
+.track-row button{background:#172635;color:white}
+#trackResult{font-weight:700}
+@media(max-width:650px){.admin-table{min-width:680px}.ana-admin{padding:10px}.pro-toolbar{padding:10px 14px}}
+
+
+.shop-tools select{min-width:155px}
+.category-chip{display:inline-flex;align-items:center;gap:7px;padding:6px 10px;margin:3px;border:1px solid #d5dde4;border-radius:18px;background:#f5f7f9;font-size:13px}
+.category-chip button{border:0;border-radius:50%;padding:1px 6px;background:#e3e8ed;color:#263746;cursor:pointer}
+
+.product-gallery{display:flex;gap:7px;overflow-x:auto;padding:7px 0}
+.product-gallery img{width:54px;height:54px;object-fit:cover;border:1px solid #d6dee6;border-radius:7px;cursor:pointer}
+.product-option{width:100%;padding:9px;margin:6px 0;border:1px solid #cbd5df;border-radius:8px;background:#fff;font:inherit}
+.product-main-photo{cursor:zoom-in}
+.photo-tools{min-width:230px}
+.photo-tools input{font-size:12px}
+.variant-edit{min-width:230px}
+.variant-edit input{margin:3px 0}
+</style>
+</head>
+<body>
+<header><div class="brand">ANA <span>Motors</span></div><nav><a href="#products">Products</a><a href="#delivery">Delivery</a><a href="#payments">Payments</a><a href="#contact">Contact</a></nav></header>
+<section class="hero">
+  <h1>Welcome to ANA MOTORS.</h1>
+  <p>Your online motors store. Browse our catalogue and discover products from ANA MOTORS.</p>
+  <a class="cta" href="#products">Explore Products</a>
+</section>
+<div class="pro-toolbar"><span>ANA MOTORS Store</span><button id="anaAdminOpen" type="button">⚙ Admin dashboard</button></div>
+<div class="trust-strip"><div>🚚 Sri Lanka-wide delivery</div><div>💬 WhatsApp ordering</div><div>🔒 Payment safety first</div><div>🚲 Quality products</div></div>
+<main class="wrap" id="products">
+  <div class="section-head"><div><h2>Our Product Catalogue</h2><p class="sub">Products and accessories</p></div></div>
+  <div class="shop-tools">
+<input id="anaSearch" type="search" placeholder="Search Motors parts..." aria-label="Search products">
+<select id="anaCategoryFilter" aria-label="Filter by category">
+<option value="all">All categories</option>
+</select>
+<select id="anaSort" aria-label="Sort products">
+<option value="featured">Sort: Featured</option>
+<option value="low">Price: Low to high</option>
+<option value="high">Price: High to low</option>
+<option value="az">Name: A to Z</option>
+</select>
+</div>
+<div class="grid">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      </div>
+  <section id="delivery" class="wrap" style="padding-left:0;padding-right:0">
+    <h2>Delivery across Sri Lanka</h2>
+    <p class="sub">Sri Lanka-wide delivery is available. Message us to confirm delivery charges, estimated delivery time and payment options for your location.</p>
+    <div class="info"><div><h3>Check compatibility</h3><p>Send your Motors wheel size, brake type or a photo of the old part so we can help confirm fit.</p></div><div><h3>Confirm availability</h3><p>Stock and prices can change. Please confirm both with us before making payment.</p></div><div><h3>Easy ordering</h3><p>Choose a product and tap “Enquire / Order” to send us a WhatsApp message.</p></div></div>
+  </section>
+  <section id="payments" class="info-section" style="margin:32px 0;padding:24px;background:#fff;border-radius:14px;box-shadow:0 5px 20px #0000000d">
+    <h2>Payment Methods</h2>
+    <div class="info">
+      <div><h3>Cash on Delivery (COD)</h3><p>Pay the courier when your order arrives. COD is subject to courier coverage, service fees and order confirmation.</p></div>
+      <div><h3>Online Card Payment</h3><p>Visa and Mastercard payments can be arranged through an approved, secure payment gateway. Online checkout is not activated yet; contact us on WhatsApp to confirm an available payment link before paying.</p></div>
+      <div><h3>Bank Transfer</h3><p>Bank transfer may be arranged before dispatch. Contact ANA MOTORS for the verified payment details and send your payment confirmation.</p></div>
+    </div>
+    <p style="margin-top:16px"><strong>Payment safety:</strong> Never share your card PIN, password or one-time verification code with anyone.</p>
+  </section>
+  <section class="wrap" id="customerTracking" style="padding-top:10px"><h2>Track an order</h2><p class="sub">Enter the order reference supplied by ANA MOTORS.</p><div class="track-row"><input id="trackRef" placeholder="Order reference (e.g. ANA-123456)" aria-label="Order reference"><button id="trackBtn" type="button">Check status</button></div><p id="trackResult" role="status"></p></section>
+  <section class="wrap" id="help" style="padding-top:12px">
+    <h2>Ordering help</h2>
+    <p class="sub">A few quick answers before you place an order.</p>
+    <div class="faq">
+      <details><summary>How do I order?</summary><p>Add the items you need, enter your contact and delivery details, then send the order through WhatsApp. We will confirm stock and the final amount.</p></details>
+      <details><summary>Are delivery charges included?</summary><p>No. Delivery charges and delivery time depend on your location and courier. We will confirm them before dispatch.</p></details>
+      <details><summary>Can I pay by card?</summary><p>Card payment is not enabled as an automatic checkout yet. Only use a verified payment link shared by ANA MOTORS after confirming the order.</p></details>
+      <details><summary>How do I check if a part fits?</summary><p>Send your Motors wheel size, brake type, model details or a clear photo of the existing part before ordering.</p></details>
+    </div>
+    <p class="site-note">Product prices and availability should be confirmed with ANA MOTORS before payment.</p>
+  </section>
+</main>
+<footer id="contact"><strong>ANA MOTORS</strong><p>WhatsApp: <a href="https://wa.me/94728411112" target="_blank" rel="noopener">072 841 1112</a></p><p>© ANA MOTORS</p></footer>
+
+<script>
+(function(){
+"use strict";
+const WA="94728411112", DBKEY="anaMotorsStoreV2", ADMIN_PASSWORD="823080204vV";
+const $=id=>document.getElementById(id);
+const grid=document.querySelector(".grid");
+if(!grid)return;
+let cards=[...grid.querySelectorAll(".product:not(.placeholder)")];
+const state=load();
+function load(){try{return JSON.parse(localStorage.getItem(DBKEY))||{products:{},orders:[],reviews:[],categories:[],coupons:[]};}catch(e){return {products:{},orders:[],reviews:[],categories:[],coupons:[]};}}
+if(!Array.isArray(state.categories)) state.categories=[];
+function categoryFor(name){
+ const n=name.toLowerCase();
+ if(/brake|disc pad|shoe|lever/.test(n)) return "Brakes";
+ if(/stand/.test(n)) return "Stands";
+ if(/crank|freewheel|chain|gear/.test(n)) return "Drivetrain";
+ return "Accessories";
+}
+function save(){localStorage.setItem(DBKEY,JSON.stringify(state));}
+function money(n){return "Rs. "+Number(n||0).toLocaleString("en-LK",{maximumFractionDigits:2});}
+function nameOf(c){return c.querySelector("h3")?.textContent.trim()||"Motors part";}
+function priceOf(c){return Number((c.querySelector(".price")?.textContent||"").replace(/[^\d.]/g,""))||0;}
+function keyOf(c){return nameOf(c);}
+// Build customer-facing product cards from products saved in the admin dashboard.
+function makeSavedProductCard(key,p){
+ const card=document.createElement("article");card.className="product";card.dataset.productKey=key;
+ const photo=Array.isArray(p.photos)&&p.photos.length?p.photos[0]:"";
+ const media=photo?`<img src="${photo}" alt="${escapeHtml(key)}" loading="lazy">`:`<div class="placeholder-art">ANA MOTORS</div>`;
+ card.innerHTML=`${media}<div class="product-body"><h3>${escapeHtml(key)}</h3><p>${escapeHtml(p.description||"Quality product. Contact us to confirm details and compatibility.")}</p><p class="price">${money(p.price)}</p><button type="button" class="add-cart">Add to order</button></div>`;
+ return card;
+}
+// The blank template starts with no hard-coded products, so restore saved admin products here.
+Object.entries(state.products||{}).forEach(([key,p])=>{
+ if(!cards.some(c=>keyOf(c)===key)){const card=makeSavedProductCard(key,p);grid.appendChild(card);cards.push(card);}
+});
+cards.forEach(c=>{
+ const key=keyOf(c), price=priceOf(c);
+ if(!state.products[key])state.products[key]={price,cost:Math.round(price*.65),stock:10,active:true,category:categoryFor(key)};
+ const p=state.products[key];
+ if(!p.category) p.category=categoryFor(key);
+ if(!Array.isArray(p.photos)) p.photos=[];
+ if(!Array.isArray(p.variants)) p.variants=[];
+ c.dataset.productKey=key;
+ c.dataset.category=p.category;
+ c.querySelector(".price").textContent=money(p.price);
+ const mainImg=c.querySelector("img");
+ if(mainImg && p.photos.length){
+   mainImg.src=p.photos[0];mainImg.classList.add("product-main-photo");
+   const gallery=document.createElement("div");gallery.className="product-gallery";
+   p.photos.forEach((src,idx)=>{const thumb=document.createElement("img");thumb.src=src;thumb.alt=key+" photo "+(idx+1);thumb.loading="lazy";thumb.onclick=()=>{mainImg.src=src;};gallery.appendChild(thumb);});
+   mainImg.after(gallery);
+ }
+ if(p.variants.length){
+   const sel=document.createElement("select");sel.className="product-option";sel.setAttribute("aria-label","Choose "+key+" price option");
+   sel.innerHTML=p.variants.map((v,i)=>`<option value="${i}">${escapeHtml(v.name)} — ${money(v.price)}</option>`).join("");
+   const chosen=p.variants.find(v=>v.name===p.selectedVariant)||p.variants[0];
+   if(chosen){sel.value=String(p.variants.indexOf(chosen));c.querySelector(".price").textContent=money(chosen.price);}
+   sel.addEventListener("change",()=>{const v=p.variants[Number(sel.value)];p.selectedVariant=v.name;c.querySelector(".price").textContent=money(v.price);save();updateCart();});
+   c.querySelector(".price").before(sel);
+ }
+ if(p.active===false)c.hidden=true;
+});
+save();
+
+const bar=document.createElement("section");
+bar.className="cart-panel";bar.id="checkout";
+bar.innerHTML=`<div class="cart-top"><div><strong>🛒 Your order</strong><br><small id="anaCartSummary">No products selected</small></div><strong id="anaCartTotal">Rs. 0</strong></div>
+<div id="anaCartLines">Your selected products will appear here.</div>
+<div class="coupon-row"><input id="anaCoupon" placeholder="Discount code" aria-label="Discount code"><button type="button" id="applyCoupon">Apply code</button><span id="couponMessage"></span></div>
+<div class="checkout-fields">
+<input id="anaCustomerName" autocomplete="name" placeholder="Your name *">
+<input id="anaCustomerPhone" autocomplete="tel" inputmode="tel" placeholder="Your phone number *">
+<input id="anaCustomerTown" autocomplete="address-level2" placeholder="Town / city *">
+<select id="anaDelivery"><option>Courier delivery</option><option>Self collection (confirm first)</option></select>
+<select id="anaPayment"><option>Cash on Delivery (subject to courier availability)</option><option>Bank transfer (details confirmed by seller)</option><option>Card payment (verified payment link only)</option></select>
+<textarea id="anaAddress" placeholder="Full delivery address / extra notes *"></textarea></div>
+<div class="cart-actions"><button type="button" id="anaSendOrder">Place order via WhatsApp ↗</button><button type="button" class="clear-cart" id="anaClearCart">Clear order</button></div>
+<p class="site-note" style="color:#d5dfe8">Orders are requests until ANA MOTORS confirms stock, delivery charge and final amount.</p>`;
+grid.after(bar);
+const cart=new Map();let appliedCoupon=null;
+
+function qtyStock(c){return Math.max(0,Number(state.products[keyOf(c)]?.stock??0));}
+function addControls(c){
+ const body=c.querySelector(".product-body");if(!body)return;
+ const wish=document.createElement("button");wish.type="button";wish.className="wishlist-btn";wish.textContent="♡ Save to wishlist";
+ wish.addEventListener("click",()=>{const saved=JSON.parse(localStorage.getItem("anaWishlist")||"[]");const k=keyOf(c);const idx=saved.indexOf(k);if(idx>=0){saved.splice(idx,1);wish.classList.remove("active");wish.textContent="♡ Save to wishlist";}else{saved.push(k);wish.classList.add("active");wish.textContent="♥ Saved";}localStorage.setItem("anaWishlist",JSON.stringify(saved));});
+ const saved=JSON.parse(localStorage.getItem("anaWishlist")||"[]");if(saved.includes(keyOf(c))){wish.classList.add("active");wish.textContent="♥ Saved";}
+ body.appendChild(wish);
+ const add=c.querySelector(".add-cart");if(add){add.textContent="Add to order";add.onclick=()=>{if(qtyStock(c)<=0){alert("Currently out of stock. Please contact us.");return;}const q=cart.get(c)||0;if(q>=qtyStock(c)){alert("Only "+qtyStock(c)+" in stock.");return;}cart.set(c,q+1);updateCart();};}
+ const qty=document.createElement("div");qty.className="quantity-tools";qty.innerHTML='<button type="button">−</button><span>0 in order</span><button type="button">+</button>';
+ qty.children[0].onclick=()=>{let q=cart.get(c)||0;if(q<=1)cart.delete(c);else cart.set(c,q-1);updateCart();};
+ qty.children[2].onclick=()=>{let q=cart.get(c)||0;if(q>=qtyStock(c)){alert("Only "+qtyStock(c)+" in stock.");return;}cart.set(c,q+1);updateCart();};
+ body.appendChild(qty);
+ const rv=document.createElement("div");rv.className="review-box";rv.innerHTML='<strong>Customer reviews</strong><div class="review-list"></div><select aria-label="Rating"><option value="5">★★★★★ (5)</option><option value="4">★★★★☆ (4)</option><option value="3">★★★☆☆ (3)</option><option value="2">★★☆☆☆ (2)</option><option value="1">★☆☆☆☆ (1)</option></select><textarea placeholder="Write a product review (shown on this device)"></textarea><button type="button">Submit review</button>';
+ rv.querySelector("button").onclick=()=>{const comment=rv.querySelector("textarea").value.trim();if(!comment){alert("Write a short review first.");return;}state.reviews.push({product:keyOf(c),rating:Number(rv.querySelector("select").value),comment,date:new Date().toLocaleDateString()});save();rv.querySelector("textarea").value="";renderReviews();};
+ body.appendChild(rv);
+}
+function renderReviews(){document.querySelectorAll(".review-list").forEach((el,i)=>{const k=keyOf(cards[i]);const list=state.reviews.filter(r=>r.product===k);el.innerHTML=list.length?list.slice(-3).map(r=>`<p>⭐ ${r.rating}/5 — ${escapeHtml(r.comment)} <small>${escapeHtml(r.date)}</small></p>`).join(""):"<p class='site-note'>No reviews yet.</p>";});}
+function escapeHtml(t){return String(t).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+cards.forEach(addControls);
+function subtotal(){let n=0;cart.forEach((q,c)=>n+=priceOf(c)*q);return n;}
+function discount(){if(!appliedCoupon)return 0;const c=state.coupons.find(x=>x.code.toUpperCase()===appliedCoupon&&x.active);if(!c)return 0;return c.type==="percent"?subtotal()*c.value/100:Math.min(subtotal(),c.value);}
+function updateCart(){let count=0,lines=[];cart.forEach((q,c)=>{count+=q;lines.push(nameOf(c)+" × "+q+" — "+money(priceOf(c)*q));const span=c.querySelector(".quantity-tools span");if(span)span.textContent=q+" in order";});
+ $("anaCartSummary").textContent=count?count+" item(s) selected":"No products selected";$("anaCartLines").textContent=lines.join(" | ")||"Your selected products will appear here.";
+ $("anaCartTotal").textContent=money(subtotal()-discount());}
+$("applyCoupon").onclick=()=>{const code=$("anaCoupon").value.trim().toUpperCase();const cp=state.coupons.find(c=>c.code.toUpperCase()===code&&c.active);if(cp){appliedCoupon=code;$("couponMessage").textContent="Applied: "+(cp.type==="percent"?cp.value+"% off":money(cp.value)+" off");}else{$("couponMessage").textContent="Invalid or inactive code";appliedCoupon=null;}updateCart();};
+$("anaClearCart").onclick=()=>{cart.clear();appliedCoupon=null;updateCart();};
+$("anaSendOrder").onclick=()=>{
+ if(!cart.size){alert("Add at least one product.");return;}
+ const name=$("anaCustomerName").value.trim(),phone=$("anaCustomerPhone").value.trim(),town=$("anaCustomerTown").value.trim(),address=$("anaAddress").value.trim();
+ if(!name||!phone||!town||!address){alert("Please complete your name, phone, town and delivery address.");return;}
+ for(const [c,q] of cart){if(q>qtyStock(c)){alert("Stock changed for "+nameOf(c)+". Please update your order.");return;}}
+ const id="ANA-"+Math.floor(100000+Math.random()*900000),items=[...cart].map(([c,q])=>({name:nameOf(c),qty:q,price:priceOf(c),cost:state.products[keyOf(c)].cost}));
+ const total=subtotal()-discount();
+ const order={id,date:new Date().toISOString(),name,phone,town,address,delivery:$("anaDelivery").value,payment:$("anaPayment").value,items,total,discount:discount(),coupon:appliedCoupon,status:"Order request received"};
+ state.orders.push(order);save();
+ const msg=["Hello ANA MOTORS, I would like to place this order.", "Reference: "+id,"",...items.map(x=>x.name+" × "+x.qty+" — "+money(x.price*x.qty)),"Discount: "+money(order.discount),"Estimated product total: "+money(total),"Name: "+name,"Phone: "+phone,"Town: "+town,"Address: "+address,"Delivery: "+order.delivery,"Payment preference: "+order.payment,"Please confirm availability, delivery fee and final amount."].join("\n");
+ window.open("https://wa.me/"+WA+"?text="+encodeURIComponent(msg),"_blank","noopener");
+ alert("Order request saved on this device. Your reference is "+id+". Keep it to check status.");
+ cart.clear();appliedCoupon=null;updateCart();
+};
+updateCart();
+
+const tracking=document.createElement("div");
+$("trackBtn")?.addEventListener("click",()=>{const id=$("trackRef").value.trim().toUpperCase();const o=state.orders.find(x=>x.id===id);$("trackResult").textContent=o?"Status: "+o.status+" — Reference "+o.id:"Order not found on this device. Please contact ANA MOTORS on WhatsApp.";});
+
+const panel=document.createElement("div");panel.className="ana-admin";panel.id="anaAdmin";
+panel.innerHTML=`<div class="ana-admin-inner"><div class="ana-admin-head"><div><h1>ANA MOTORS — Admin</h1><p class="site-note">Admin manager. Products are shown in the customer list on this browser/device. Changes are saved only in this browser on this device; secure shared accounts, live stock and online order records require a hosted backend.</p></div><button class="close" id="adminClose">Close ✕</button></div>
+<div class="admin-actions"><button id="exportData">Export backup (JSON)</button><button id="exportCsv">Export orders (CSV)</button><button id="printReport">Print report</button><button id="resetDemo" class="danger">Reset local data</button></div>
+<div class="admin-grid" id="adminStats"></div>
+<div class="admin-section"><h3>Manage categories</h3><div class="admin-form"><input id="newCategory" placeholder="New category name"><button id="addCategory">Add category</button></div><div id="categoryAdmin"></div><p class="site-note">Create your own product categories, then assign products below.</p></div>
+<div class="admin-section"><h3>Products, prices, categories, stock, photos and price options</h3><p class="site-note">Each product can have up to 5 photos and several price options (for example: Standard, Premium, 16 inch, 26 inch). Images are resized before being saved in this browser.</p><div id="productAdmin"></div></div>
+<div class="admin-section"><h3>Add a new product</h3><div class="admin-form"><input id="newName" placeholder="Product name"><select id="newProductCategory" aria-label="New product category"></select><input id="newPrice" type="number" min="0" placeholder="Selling price (Rs.)"><input id="newCost" type="number" min="0" placeholder="Cost price (Rs.)"><input id="newStock" type="number" min="0" placeholder="Opening stock"><label class="site-note" style="display:block">Product photos (up to 5)<input id="newPhotos" type="file" accept="image/*" multiple style="display:block;width:100%;margin-top:7px"></label><button id="addProduct">Add product record</button></div><div id="newPhotoPreview" class="product-gallery" aria-live="polite"></div><p class="site-note">Choose up to 5 product photos when adding a new item. Images are resized and saved in this browser on this device.</p></div>
+<div class="admin-section"><h3>Orders</h3><div id="ordersAdmin"></div></div>
+<div class="admin-section"><h3>Discount codes</h3><div class="admin-form"><input id="newCoupon" placeholder="Code e.g. SAVE10"><select id="couponType"><option value="percent">Percentage %</option><option value="fixed">Fixed Rs.</option></select><input id="couponValue" type="number" min="1" placeholder="Discount value"><button id="addCoupon">Create discount</button></div><div id="couponAdmin"></div></div>
+<div class="admin-section"><h3>Customer reviews</h3><div id="reviewsAdmin"></div></div>
+</div>`;
+document.body.appendChild(panel);
+const login=document.createElement("div");login.id="anaAdminLogin";
+login.innerHTML=`<form class="ana-login-card" id="anaLoginForm"><h2>ANA MOTORS Admin Login</h2><p>Enter your admin password to continue.</p><input id="anaAdminPassword" type="password" autocomplete="current-password" placeholder="Admin password" required aria-label="Admin password"><div id="anaLoginError" role="alert"></div><div class="ana-login-actions"><button type="submit">Unlock dashboard</button><button type="button" class="cancel" id="anaLoginCancel">Cancel</button></div></form>`;
+document.body.appendChild(login);
+$("anaAdminOpen").onclick=()=>{ $("anaAdminPassword").value=""; $("anaLoginError").textContent=""; login.classList.add("open"); setTimeout(()=>$("anaAdminPassword").focus(),50); };
+$("anaLoginForm").addEventListener("submit",e=>{e.preventDefault();if($("anaAdminPassword").value===ADMIN_PASSWORD){login.classList.remove("open");panel.classList.add("open");renderAdmin();}else{$("anaLoginError").textContent="Incorrect password. Please try again.";$("anaAdminPassword").select();}});
+$("anaLoginCancel").onclick=()=>login.classList.remove("open");
+$("adminClose").onclick=()=>panel.classList.remove("open");
+function renderAdmin(){
+ const orders=state.orders, revenue=orders.filter(o=>!["Cancelled"].includes(o.status)).reduce((a,o)=>a+o.total,0);
+ const profit=orders.filter(o=>!["Cancelled"].includes(o.status)).reduce((a,o)=>a+o.items.reduce((s,it)=>s+(it.price-it.cost)*it.qty,0)-o.discount,0);
+ const units=Object.values(state.products).reduce((a,p)=>a+Number(p.stock||0),0);
+ $("adminStats").innerHTML=[["Order requests",orders.length],["Sales value",money(revenue)],["Estimated gross profit",money(profit)],["Units in stock",units]].map(x=>`<div class="admin-card">${x[0]}<strong>${x[1]}</strong></div>`).join("");
+ const categoryOptions=(selected)=>state.categories.map(c=>`<option value="${escapeHtml(c)}" ${c===selected?"selected":""}>${escapeHtml(c)}</option>`).join("");
+ $("newProductCategory").innerHTML=categoryOptions(state.categories[0]||"Accessories");
+ $("categoryAdmin").innerHTML=state.categories.map((c,i)=>`<span class="category-chip">${escapeHtml(c)} <button type="button" data-category-delete="${i}" aria-label="Delete ${escapeHtml(c)}">×</button></span>`).join(" ")||"No categories yet.";
+ [...$("categoryAdmin").querySelectorAll("[data-category-delete]")].forEach(b=>b.onclick=()=>{const i=Number(b.dataset.categoryDelete),name=state.categories[i];if(Object.values(state.products).some(p=>p.category===name)){alert("Assign these products to another category before deleting this category.");return;}if(confirm("Delete category "+name+"?")){state.categories.splice(i,1);save();renderAdmin();renderCategoryFilter();}});
+ $("productAdmin").innerHTML='<table class="admin-table"><thead><tr><th>Product</th><th>Category</th><th>Base price Rs.</th><th>Cost Rs.</th><th>Stock</th><th>Price options</th><th>Up to 5 photos</th><th>Save</th></tr></thead><tbody>'+Object.entries(state.products).map(([k,p],i)=>`<tr><td>${escapeHtml(k)}</td><td><select id="pCat${i}">${categoryOptions(p.category)}</select></td><td><input type="number" min="0" id="pp${i}" value="${p.price}"></td><td><input type="number" min="0" id="pc${i}" value="${p.cost}"></td><td><input type="number" min="0" id="ps${i}" value="${p.stock}"></td><td class="variant-edit"><input id="pv${i}" value="${escapeHtml((p.variants||[]).map(v=>v.name+":"+v.price).join(", "))}" placeholder="Standard:150, Premium:250"><small>Format: Option:Price, Option:Price</small></td><td class="photo-tools"><input type="file" accept="image/*" multiple data-photo-upload="${i}"><small>${(p.photos||[]).length}/5 photos saved</small></td><td><button data-product-save="${i}">Save</button></td></tr>`).join("")+'</tbody></table>';
+ [...$("productAdmin").querySelectorAll("[data-product-save]")].forEach(b=>b.onclick=()=>{const i=Number(b.dataset.productSave),k=Object.keys(state.products)[i],p=state.products[k];p.category=$("pCat"+i).value;p.price=Math.max(0,Number($("pp"+i).value));p.cost=Math.max(0,Number($("pc"+i).value));p.stock=Math.max(0,Number($("ps"+i).value));const raw=$("pv"+i).value.trim();if(raw){const parsed=raw.split(",").map(x=>{const z=x.split(":");return {name:(z[0]||"").trim(),price:Number((z[1]||"").trim())};}).filter(v=>v.name&&Number.isFinite(v.price)&&v.price>=0);if(!parsed.length){alert("Enter price options like Standard:150, Premium:250.");return;}p.variants=parsed;}else{p.variants=[];p.selectedVariant=null;}const card=cards.find(c=>keyOf(c)===k);if(card){card.querySelector(".price").textContent=money(p.price);card.dataset.category=p.category;const old=card.querySelector(".product-option");if(old)old.remove();if(p.variants.length){const sel=document.createElement("select");sel.className="product-option";sel.setAttribute("aria-label","Choose "+k+" price option");sel.innerHTML=p.variants.map((v,j)=>`<option value="${j}">${escapeHtml(v.name)} — ${money(v.price)}</option>`).join("");sel.onchange=()=>{const v=p.variants[Number(sel.value)];p.selectedVariant=v.name;card.querySelector(".price").textContent=money(v.price);save();updateCart();};card.querySelector(".price").before(sel);card.querySelector(".price").textContent=money(p.variants[0].price);}}save();renderAdmin();updateCart();renderCategoryFilter();});
+ [...$("productAdmin").querySelectorAll("[data-photo-upload]")].forEach(inp=>inp.addEventListener("change",async()=>{const i=Number(inp.dataset.photoUpload),k=Object.keys(state.products)[i],p=state.products[k],files=[...inp.files].slice(0,5);if(!files.length)return;try{const encoded=[];for(const file of files){if(!file.type.startsWith("image/"))continue;const data=await new Promise((resolve,reject)=>{const reader=new FileReader();reader.onload=()=>resolve(reader.result);reader.onerror=reject;reader.readAsDataURL(file);});const img=await new Promise((resolve,reject)=>{const im=new Image();im.onload=()=>resolve(im);im.onerror=reject;im.src=data;});const canvas=document.createElement("canvas"),scale=Math.min(1,900/Math.max(img.width,img.height));canvas.width=Math.round(img.width*scale);canvas.height=Math.round(img.height*scale);canvas.getContext("2d").drawImage(img,0,0,canvas.width,canvas.height);encoded.push(canvas.toDataURL("image/jpeg",0.72));}p.photos=encoded.slice(0,5);save();alert("Saved "+p.photos.length+" product photos on this device.");location.reload();}catch(e){alert("Could not save these images. Try smaller photos.");}}));
+ $("ordersAdmin").innerHTML=orders.length?'<table class="admin-table"><thead><tr><th>Reference / date</th><th>Customer</th><th>Items</th><th>Total</th><th>Status</th><th>Save</th></tr></thead><tbody>'+orders.map((o,i)=>`<tr><td>${o.id}<br><small>${new Date(o.date).toLocaleString()}</small></td><td>${escapeHtml(o.name)}<br>${escapeHtml(o.phone)}</td><td>${o.items.map(x=>escapeHtml(x.name)+" × "+x.qty).join("<br>")}</td><td>${money(o.total)}</td><td><select id="os${i}">${["Order request received","Confirmed","Packed","Dispatched","Out for delivery","Delivered","Cancelled"].map(v=>`<option ${o.status===v?"selected":""}>${v}</option>`).join("")}</select></td><td><button data-order-save="${i}">Update</button></td></tr>`).join("")+'</tbody></table>':"<p>No orders saved on this device yet.</p>";
+ [...$("ordersAdmin").querySelectorAll("[data-order-save]")].forEach(b=>b.onclick=()=>{const i=Number(b.dataset.orderSave);state.orders[i].status=$("os"+i).value;save();renderAdmin();});
+ $("couponAdmin").innerHTML=state.coupons.map((c,i)=>`<p><b>${escapeHtml(c.code)}</b> — ${c.type==="percent"?c.value+"%":money(c.value)} off — ${c.active?"Active":"Inactive"} <button data-coupon="${i}">${c.active?"Deactivate":"Activate"}</button></p>`).join("")||"No discount codes.";
+ [...$("couponAdmin").querySelectorAll("[data-coupon]")].forEach(b=>b.onclick=()=>{state.coupons[Number(b.dataset.coupon)].active=!state.coupons[Number(b.dataset.coupon)].active;save();renderAdmin();});
+ $("reviewsAdmin").innerHTML=state.reviews.length?state.reviews.map(r=>`<p>${escapeHtml(r.product)} — ${r.rating}/5 — ${escapeHtml(r.comment)}</p>`).join(""):"No reviews yet.";
+}
+$("addCategory").onclick=()=>{const name=$("newCategory").value.trim();if(!name){alert("Enter a category name.");return;}if(state.categories.some(c=>c.toLowerCase()===name.toLowerCase())){alert("That category already exists.");return;}state.categories.push(name);$("newCategory").value="";save();renderAdmin();renderCategoryFilter();};
+async function encodeProductPhotos(fileList){const encoded=[];for(const file of [...fileList].slice(0,5)){if(!file.type.startsWith("image/"))continue;const data=await new Promise((resolve,reject)=>{const reader=new FileReader();reader.onload=()=>resolve(reader.result);reader.onerror=reject;reader.readAsDataURL(file);});const img=await new Promise((resolve,reject)=>{const im=new Image();im.onload=()=>resolve(im);im.onerror=reject;im.src=data;});const canvas=document.createElement("canvas"),scale=Math.min(1,900/Math.max(img.width,img.height));canvas.width=Math.max(1,Math.round(img.width*scale));canvas.height=Math.max(1,Math.round(img.height*scale));canvas.getContext("2d").drawImage(img,0,0,canvas.width,canvas.height);encoded.push(canvas.toDataURL("image/jpeg",0.72));}return encoded;}
+$("newPhotos").addEventListener("change",()=>{const files=[...$("newPhotos").files].slice(0,5),preview=$("newPhotoPreview");preview.innerHTML="";files.forEach(file=>{if(!file.type.startsWith("image/"))return;const img=document.createElement("img");img.alt="Selected product photo preview";img.src=URL.createObjectURL(file);preview.appendChild(img);});if($("newPhotos").files.length>5)alert("Only the first 5 photos will be added.");});
+$("addProduct").onclick=async()=>{const n=$("newName").value.trim(),price=Number($("newPrice").value),cost=Number($("newCost").value),stock=Number($("newStock").value),category=$("newProductCategory").value;if(!n||!Number.isFinite(price)||price<0||!Number.isFinite(cost)||cost<0||!Number.isFinite(stock)||stock<0){alert("Enter a name and valid non-negative prices and stock.");return;}if(state.products[n]){alert("That product already exists.");return;}try{const photos=await encodeProductPhotos($("newPhotos").files);state.products[n]={price,cost,stock,active:true,category:category||"Accessories",photos,variants:[]};save();alert("Product added with "+photos.length+" photo(s). It will now appear in the customer product list.");location.reload();}catch(e){alert("Could not process the selected photos. Try smaller image files.");}};
+$("addCoupon").onclick=()=>{const code=$("newCoupon").value.trim().toUpperCase(),value=Number($("couponValue").value);if(!code||!Number.isFinite(value)||value<=0){alert("Enter a discount code and value.");return;}if(state.coupons.some(c=>c.code===code)){alert("That code already exists.");return;}state.coupons.push({code,type:$("couponType").value,value,active:true});save();renderAdmin();};
+$("exportData").onclick=download(JSON.stringify(state,null,2),"ana-Motors-backup.json","application/json");
+function download(data,filename,type){return ()=>{const a=document.createElement("a"),u=URL.createObjectURL(new Blob([data],{type}));a.href=u;a.download=filename;a.click();URL.revokeObjectURL(u);};}
+$("exportCsv").onclick=()=>{const rows=[["Reference","Date","Customer","Phone","Status","Total"],...state.orders.map(o=>[o.id,o.date,o.name,o.phone,o.status,o.total])];download(rows.map(r=>r.map(x=>'"'+String(x).replace(/"/g,'""')+'"').join(",")).join("\n"),"ana-Motors-orders.csv","text/csv")();};
+$("printReport").onclick=()=>window.print();
+$("resetDemo").onclick=()=>{if(confirm("Clear all locally saved orders, stock edits, reviews and discounts?")){localStorage.removeItem(DBKEY);location.reload();}};
+function renderCategoryFilter(){
+ const filter=$("anaCategoryFilter"),current=filter.value||"all";
+ filter.innerHTML='<option value="all">All categories</option>'+state.categories.map(c=>`<option value="${escapeHtml(c)}">${escapeHtml(c)}</option>`).join("");
+ filter.value=state.categories.includes(current)?current:"all";
+}
+renderCategoryFilter();
+$("anaCategoryFilter").addEventListener("change",applyProductFilters);
+$("anaSearch").addEventListener("input",applyProductFilters);
+$("anaSort").addEventListener("change",applyProductFilters);
+function applyProductFilters(){
+ const q=$("anaSearch").value.trim().toLowerCase(),cat=$("anaCategoryFilter").value,sort=$("anaSort").value;
+ const visible=cards.filter(c=>{const p=state.products[keyOf(c)]||{};const matchText=nameOf(c).toLowerCase().includes(q);const matchCat=cat==="all"||p.category===cat;const active=p.active!==false;c.hidden=!(matchText&&matchCat&&active);return !c.hidden;});
+ visible.sort((a,b)=>sort==="low"?priceOf(a)-priceOf(b):sort==="high"?priceOf(b)-priceOf(a):sort==="az"?nameOf(a).localeCompare(nameOf(b)):0);
+ visible.forEach(c=>grid.appendChild(c));
+}
+applyProductFilters();
+renderReviews();
+})();
+</script>
+
+</body></html>
